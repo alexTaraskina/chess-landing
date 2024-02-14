@@ -1,0 +1,831 @@
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+/* Breakpoints */
+
+body::before {
+    content: "small";
+    display: none;
+    visibility: hidden;
+}
+
+@media (min-width: 1024px) {
+    body::before {
+        content: "medium";
+    }
+}
+
+/* контейнер контента */
+
+.container {
+    max-width: 1366px;
+    margin: auto;
+    padding: 0 19px;
+}
+
+/* баннер */
+
+.banner {
+    position: relative;
+}
+
+.banner__content {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 18px 19px;
+}
+
+.banner__title {
+    font-size: 36px;
+    line-height: 110%;
+    color: var(--main-font-color);
+    text-transform: uppercase;
+}
+
+.banner__description {
+    font-family: "Golos Text";
+    font-size: 18px;
+    line-height: 130%;
+    color: var(--main-font-color);
+    margin: 24px 0 32px 0;
+}
+
+.banner__logo {
+    margin-bottom: 40px;
+}
+
+.banner__image {
+    width: 100%;
+}
+
+.banner__title-spacing-line3 {
+    display: inline-block;
+    width: 17%;
+    height: 100%;
+}
+
+.banner__title-spacing-line4 {
+    display: inline-block;
+    width: 4%;
+    height: 100%;
+}
+
+.banner__secondary-btn {
+    margin-top: 14px;
+}
+
+.banner_buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* кнопка */
+
+.btn {
+    border-radius: 66px;
+    padding: 18px 20px;
+    width: 100%;
+    font-family: "Golos Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 11px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:focus {
+    border: none;
+    outline: none;
+}
+
+.btn:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.01);
+}
+
+.btn_primary {
+    background-color: var(--btn-gray);
+    color: white;
+}
+
+.btn_secondary {
+    background-color: white;
+    opacity: 0.9;
+    color: var(--btn-gray);
+}
+
+/* бегущая строка */
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate(-100%, 0);
+        transform: translate(-100%, 0)
+    }
+}
+
+@-moz-keyframes scroll {
+    0% {
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    100% {
+        -moz-transform: translate(-100%, 0);
+        transform: translate(-100%, 0)
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0)
+    }
+}
+
+.ticker {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    padding: 12px 0;
+    background-color: var(--text-attention);
+    color: white;
+    font-size: 16px;
+    line-height: 110%;
+    text-transform: uppercase;
+}
+
+.ticker span {
+    display: inline-block;
+    padding-left: 100%;
+    -webkit-animation: scroll 5s infinite linear;
+    -moz-animation: scroll 5s infinite linear;
+    animation: scroll 5s infinite linear;
+}
+
+/* блок с информацией о лекции */
+
+.about-lecture {
+    position: relative;
+    padding-top: 48px;
+}
+
+.about-lecture__title {
+    font-size: 28px;
+    line-height: 135%;
+    text-transform: uppercase;
+    color: var(--main-font-color);
+    align-self: flex-start;
+}
+
+/* порядок элементов в первом текстовом блоке */
+
+.about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(1) {
+    order: 1;
+}
+
+.about-lecture__content-row:nth-of-type(1) .about-lecture__image_wrapper {
+    order: 3;
+    margin: 24px 0;
+}
+
+.about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(2) {
+    order: 2;
+}
+
+.about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(3) {
+    order: 4;
+}
+
+.about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(4) {
+    order: 5;
+}
+
+.about-lecture__attention-text {
+    color: var(--text-attention);
+    font-weight: bold;
+}
+
+.about-lecture__content-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-lecture__content-row:first-of-type {
+    margin-bottom: 36px;
+    align-items: center;
+}
+
+.about-lecture__table-container {
+    padding-top: 0;
+}
+
+.about-lecture__table tr:not(:last-of-type) td:first-of-type {
+    border-bottom: none;
+}
+
+.about-lecture__table tr:not(:last-of-type) td:not(:first-of-type) {
+    border-bottom: 2px solid var(--table-border-color)
+}
+
+.about-lecture__table {
+    margin-top: 44px;
+    width: 100%;
+}
+
+.about-lecture__table tr {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-lecture__table tr:first-of-type td {
+    padding-bottom: 12px;
+}
+
+.about-lecture__table tr:not(:first-of-type) td:first-of-type {
+    padding: 16px 0 12px 0;
+}
+
+.about-lecture__row-name {
+    opacity: 0.7;
+}
+
+.about-lecture__row-name,
+.about-lecture__row-value {
+    color: var(--main-font-color);
+    font-family: 'Golos Text';
+    font-size: 20px;
+    line-height: 120%;
+}
+
+.about-lecture__row-value {
+    font-weight: 600;
+    padding-left: 0 !important;
+    padding-bottom: 16px !important;
+}
+
+.about-lecture__crossed-out-text {
+    position: relative;
+}
+
+.about-lecture__crossed-out-text::before {
+    content: ' ';
+    width: 100%;
+    height: 2px;
+    display: flex;
+    position: absolute;
+    background-color: var(--text-attention);
+    top: 50%;
+}
+
+.about-lecture__additional-text {
+    color: var(--secondary-text-color);
+    font-family: 'Golos Text';
+    font-size: 18px;
+    line-height: 120%;
+    margin-top: 32px;
+}
+
+.about-lecture__image_wrapper {
+    width: 100%;
+}
+
+.about-lecture__image_wrapper img {
+    width: 100%;
+}
+
+/* блок этапы */
+
+ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    display: block;
+    list-style: none;
+}
+
+.stages {
+    margin: 120px 0;
+    position: relative;
+}
+
+.stages__title {
+    position: relative;
+    color: var(--main-font-color);
+    font-size: 28px;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-bottom: 142px;
+}
+
+.stages__additional-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50%;
+    color: var(--secondary-text-color);
+    font-family: "Golos Text";
+    font-size: 18px;
+    line-height: 120%;
+    text-transform: none;
+    margin-top: 12px;
+}
+
+.stages__items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 300px;
+    overflow: hidden;
+    height: 335px;
+    gap: 0;
+    background-image: url(./assets/stageItemBackgroundMobile.png);
+    background-size: 100%;
+    padding: 62px 24px 14px 20px;
+}
+
+.stages__item:nth-child(3) {
+    grid-row: span 2;
+}
+
+.stages__item:nth-child(7) {
+    grid-column: span 2;
+}
+
+.stages__item {
+    width: 100%;
+    background-image: none;
+    display: flex;
+    padding-bottom: 20px;
+    color: var(--main-font-color);
+    font-family: "Golos Text";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 120%;
+    counter-increment: item;
+}
+
+.stages__item::before {
+    display: flex;
+    content: attr(data-order);
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    margin-right: 16px;
+    background: white;
+    border-radius: 100%;
+    color: var(--main-font-color);
+    font-family: "Golos Text";
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.stages__item span {
+    width: 302px;
+    max-width: 100%;
+}
+
+.stage__images {
+    position: absolute;
+    bottom: 335px;
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.slider__btnsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28px;
+}
+
+.sliderBtn {
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: var(--main-font-color);
+    opacity: 0.2;
+    border: none;
+}
+
+.sliderBtn:focus {
+    border: none;
+    outline: none;
+}
+
+.sliderBtn:hover {
+    transform: scale(1.02);
+}
+
+.sliderBtn_active {
+    opacity: 1;
+}
+
+.slider__dots-wrapper {
+    display: flex;
+    margin: 0 13px;
+}
+
+.slider__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--main-font-color);
+    opacity: 0.2;
+    margin: 0 3px;
+}
+
+.slider__dot_active {
+    opacity: 1;
+}
+
+.slider__number {
+    font-family: "Golos Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    padding: 0 14px;
+}
+
+.slider__btnsWrapper {
+    display: flex;
+}
+
+.participants__title {
+    color: var(--main-font-color);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+    text-transform: uppercase;
+}
+
+.participants__image-wrapper {
+    width: 100%;
+    padding: 0 45px 28px 45px;
+}
+
+.participants__image-wrapper img {
+    width: 100%;
+}
+
+.participants__card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0 12px 0;
+    align-items: center;
+}
+
+.participants__name,
+.participants__description {
+    color: var(--main-font-color);
+    font-family: "Golos Text";
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 8px;
+}
+
+.participants__name {
+    font-size: 24px;
+}
+
+.participants__description {
+    font-size: 20px;
+    opacity: 0.6;
+    margin-bottom: 20px;
+}
+
+.participants__moreInfoBtn {
+    display: flex;
+    padding: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 62px;
+    border: 1px solid var(--secondary-text-color);
+    color: var(--secondary-text-color);
+    font-family: "Golos Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    background-color: transparent;
+    width: fit-content;
+    line-height: 11px;
+}
+
+.participants__moreInfoBtn:focus {
+    outline: none;
+}
+
+.participants__moreInfoBtn:hover {
+    transform: scale(1.02);
+}
+
+footer {
+    position: relative;
+    margin-top: 100px;
+    background-color: var(--footer-background);
+    color: var(--main-font-color);
+    font-family: "Golos Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    padding: 81px 0;
+}
+
+.footer__text {
+    opacity: 0.6;
+}
+
+footer .ticker {
+    top: 0;
+    height: fit-content;
+    opacity: 1;
+}
+
+@media only screen and (min-width: 640px) {
+    .banner__content {
+        width: 100%;
+        padding: 18px 19px;
+    }
+
+    .banner__title {
+        font-size: 32px;
+        line-height: 110%;
+    }
+
+    .banner__description {
+        width: 50%;
+    }
+
+    .banner {
+        height: calc(700px + 41px);
+    }
+
+    .banner picture {
+        display: block;
+        height: 700px;
+        width: 100%;
+    }
+
+    .banner__image {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .banner_buttons-wrapper {
+        width: 50%;
+    }
+
+    .btn {
+        max-width: 300px;
+    }
+
+    .about-lecture {
+        padding-top: 80px;
+    }
+
+    .about-lecture__title {
+        font-size: 28px;
+        line-height: 135%;
+    }
+
+    .about-lecture__content-row {
+        flex-direction: row;
+    }
+
+    .about-lecture__content-row:nth-of-type(1) {
+        width: 65%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(3) {
+        order: 3;
+    }
+
+    .about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(4) {
+        order: 4;
+    }
+
+    .about-lecture__content-row:nth-of-type(1) .about-lecture__image_wrapper {
+        position: absolute;
+        right: 0;
+        width: 300px;
+    }
+
+    .about-lecture__table tr {
+        display: block;
+    }
+
+    .about-lecture__table tr:not(:last-of-type) td:first-of-type {
+        border-bottom: 2px solid var(--table-border-color);
+    }
+
+    .stages__title {
+        font-size: 54px;
+        margin-bottom: 54px;
+    }
+
+    .stages__additional-text {
+        position: absolute;
+    }
+
+    .about-lecture__table-container {
+        padding-top: 29px;
+    }
+
+    .about-lecture__table {
+        margin-top: 60px;
+    }
+
+    .about-lecture__table tr:first-of-type td {
+        padding: 6px 0 16px 0;
+    }
+
+    .about-lecture__row-name {
+        width: 306px;
+    }
+
+    .about-lecture__row-value {
+        padding-left: 16px !important;
+    }
+
+    .about-lecture__table tr:not(:first-of-type) td {
+        padding: 16px 0;
+    }
+
+    .about-lecture__table tr td:first-of-type {
+        border-right: 2px solid var(--table-border-color);
+    }
+
+    .about-lecture__table tr:last-of-type td {
+        padding: 16px 0 6px 0;
+    }
+
+    .about-lecture__additional-text {
+        font-size: 20px;
+        margin-top: 48px;
+    }
+
+    .stage__images {
+        position: absolute;
+        bottom: 30px;
+        right: 0;
+    }
+
+    .stages__title,
+    .participants__title {
+        font-size: 28px;
+    }
+
+    .participants__card {
+        width: calc(100% / 3);
+    }
+
+    .participants__name,
+    .participants__description,
+    .participants__moreInfoBtn {
+        align-self: center;
+        text-align: center;
+    }
+
+    .participants__cards-wrapper {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .banner__content {
+        width: 100%;
+        padding: 19px 72px;
+    }
+
+    .banner__title {
+        font-size: 60px;
+        line-height: 110%;
+    }
+    
+    .container {
+        padding-right: 72px;
+        padding-left: 72px;
+    }
+
+    .about-lecture__title {
+        font-size: 36px;
+        line-height: 135%;
+    }
+
+    .about-lecture__content-row:nth-of-type(1) .about-lecture__image_wrapper {
+        width: 394px;
+    }
+
+    .stages {
+        margin-top: 130px;
+    }
+
+    .stages__additional-text {
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+    .stages__item[data-order="7"] span {
+        width: 446px;
+        max-width: 50%;
+    }
+
+    .stages__items {
+        display: grid;
+        grid-template-columns: repeat(3, calc(100% / 3 - 40px));
+        grid-template-rows: repeat(3, auto);
+        gap: 20px;
+        grid-auto-flow: row dense;
+        background-image: none;
+        height: auto;
+    }
+
+    .stages__item {
+        padding: 20px;
+    }
+
+    .stages__item[data-order="1"] {
+        background-image: url(./assets/stageItemBackground1.png);
+    }
+
+    .stages__item[data-order="2"] {
+        background-image: url(./assets/stageItemBackground2.png);
+    }
+
+    .stages__item[data-order="3"] {
+        background-image: url(./assets/stageItemBackground3.png);
+    }
+
+    .stages__item[data-order="4"] {
+        background-image: url(./assets/stageItemBackground4.png);
+    }
+
+    .stages__item[data-order="5"] {
+        background-image: url(./assets/stageItemBackground5.png);
+    }
+
+    .stages__item[data-order="6"] {
+        background-image: url(./assets/stageItemBackground6.png);
+    }
+
+    .stages__item[data-order="7"] {
+        background-image: url(./assets/stageItemBackground7.png);
+    }
+
+    .stage__images {
+        bottom: 0;
+    }
+
+    .stages .slider__btnsWrapper {
+        display: none;
+    }
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 1ex;
+    background-color: #595653;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
