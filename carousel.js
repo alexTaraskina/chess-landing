@@ -80,15 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function nextSlide() {
             if (auto) {
-                currentIndex = (currentIndex + 3) % carouselLength;
-                
                  if (breakpoint !== 'small') {
+                    currentIndex = (currentIndex + 3) % carouselLength;
                     showSlide(
                         currentIndex, 
                         (currentIndex + 1) % carouselLength, 
                         (currentIndex + 2) % carouselLength
                     );
                 } else {
+                    currentIndex = (currentIndex + 1) % carouselLength;
                     showSlide(currentIndex);
                 }
             } else {
@@ -99,15 +99,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         function previousSlide() {
             if (auto) {
-                currentIndex = (currentIndex - 3 + carouselLength) % carouselLength;
-                
                  if (breakpoint !== 'small') {
+                    currentIndex = (currentIndex - 3 + carouselLength) % carouselLength;
                     showSlide(
                         currentIndex, 
                         (currentIndex - 1) % carouselLength, 
                         (currentIndex - 2) % carouselLength
                     );
                 } else {
+                    currentIndex = (currentIndex - 1 + carouselLength) % carouselLength;
                     showSlide(currentIndex);
                 }
             } else {
@@ -145,7 +145,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 showSlide(currentIndex);
             }
         } else {
-            showSlide(currentIndex);
+            if (breakpoint === 'small') {
+                showSlide(currentIndex);
+            }
         }
 
         nextBtn.addEventListener('click', nextSlide);
@@ -153,9 +155,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
         window.addEventListener('resize', function () {
             breakpoint = getBreakpoint();
-            if (breakpoint === 'small') {
-                showSlide(currentIndex);
-            }
+
+            if (auto) {
+                carouselItems.forEach(item => {
+                    item.style.display = 'none';
+                });
+                
+                currentIndex = 0;
+                if (breakpoint !== 'small') {
+                   showSlide(
+                       currentIndex, 
+                       (currentIndex + 1) % carouselLength, 
+                       (currentIndex + 2) % carouselLength
+                   );
+               } else {
+                   showSlide(currentIndex);
+               }
+           } else {
+               if (breakpoint === 'small') {
+                   showSlide(currentIndex);
+               }
+           }
         }, false);
 
         window.addEventListener('resize', () => {

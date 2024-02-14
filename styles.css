@@ -19,7 +19,7 @@ body::before {
     visibility: hidden;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 640px) {
     body::before {
         content: "medium";
     }
@@ -115,7 +115,7 @@ body::before {
 
 .btn:hover {
     transition: all 0.3s ease;
-    transform: scale(1.01);
+    transform: scale(1.02);
 }
 
 .btn_primary {
@@ -127,6 +127,18 @@ body::before {
     background-color: white;
     opacity: 0.9;
     color: var(--btn-gray);
+}
+
+.btn_primary:hover {
+    background-color: var(--yellow);
+    color: var(--btn-gray);
+    font-weight: 500;
+}
+
+.btn_secondary:hover {
+    background-color: var(--btn-gray);
+    color: white;
+    opacity: 1;
 }
 
 /* бегущая строка */
@@ -432,6 +444,9 @@ li {
 }
 
 .sliderBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 36px;
     height: 36px;
     border-radius: 100%;
@@ -447,6 +462,8 @@ li {
 
 .sliderBtn:hover {
     transform: scale(1.02);
+    background-color: var(--yellow);
+    cursor: pointer;
 }
 
 .sliderBtn_active {
@@ -552,6 +569,9 @@ li {
 
 .participants__moreInfoBtn:hover {
     transform: scale(1.02);
+    cursor: pointer;
+    background-color: var(--secondary-text-color);
+    color: white;
 }
 
 footer {
@@ -656,6 +676,10 @@ footer .ticker {
         border-bottom: 2px solid var(--table-border-color);
     }
 
+    .about-lecture__table-container {
+        margin-left: 16px;
+    }
+
     .stages__title {
         font-size: 54px;
         margin-bottom: 54px;
@@ -681,7 +705,14 @@ footer .ticker {
         width: 306px;
     }
 
+    .about-lecture__table tr {
+        display: flex;
+        flex-direction: row;
+    }
+
     .about-lecture__row-value {
+        display: flex;
+        width: calc(100% - 306px);
         padding-left: 16px !important;
     }
 
@@ -700,6 +731,14 @@ footer .ticker {
     .about-lecture__additional-text {
         font-size: 20px;
         margin-top: 48px;
+    }
+
+    #about .about-lecture__image_wrapper {
+        display: none;
+    }
+
+    #about .about-lecture__table-container {
+        margin-left: 0;
     }
 
     .stage__images {
@@ -739,6 +778,31 @@ footer .ticker {
         font-size: 60px;
         line-height: 110%;
     }
+
+    .btn {
+        padding: 14px 49px;
+        width: calc(165px + 49px * 2);
+        line-height: 130%;
+        font-weight: bold;
+        height: fit-content;
+        flex-shrink: 0;
+    }
+
+    .banner_buttons-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .btn_secondary {
+        background-color: transparent;
+        border-radius: 66px;
+        border: 2px solid var(--btn-gray);
+    }
+
+    .banner__secondary-btn {
+        margin-top: 0;
+        margin-left: 16px;
+    }
     
     .container {
         padding-right: 72px;
@@ -754,6 +818,14 @@ footer .ticker {
         width: 394px;
     }
 
+    #about .about-lecture__image_wrapper {
+        display: block;
+    }
+
+    #about .about-lecture__table-container {
+        margin-left: 16px;
+    }
+
     .stages {
         margin-top: 130px;
     }
@@ -761,6 +833,19 @@ footer .ticker {
     .stages__additional-text {
         margin-left: 20px;
         font-size: 20px;
+        margin-top: 0;
+    }
+
+    .stages__title {
+        font-size: 54px;
+    }
+
+    .stages__items {
+        padding: 0;
+    }
+
+    .stages__additional-text {
+        display: inline-flex;
     }
 
     .stages__item[data-order="7"] span {
