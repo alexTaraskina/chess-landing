@@ -84,7 +84,7 @@ li {
 }
 
 .stages__item span {
-    width: 302px;
+    width: calc(100% - 92px);
     max-width: 100%;
 }
 
@@ -108,7 +108,7 @@ li {
     .stage__images {
         position: absolute;
         bottom: 30px;
-        right: 0;
+        right: -50px;
     }
 
     .stages__title {
@@ -141,12 +141,12 @@ li {
 
     .stages__item[data-order="7"] span {
         width: 446px;
-        max-width: 50%;
+        max-width: 52%;
     }
 
     .stages__items {
         display: grid;
-        grid-template-columns: repeat(3, calc(100% / 3 - 40px));
+        grid-template-columns: repeat(3, calc(100% / 3));
         grid-template-rows: repeat(3, auto);
         gap: 20px;
         grid-auto-flow: row dense;

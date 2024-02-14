@@ -25,6 +25,12 @@ body::before {
     }
 }
 
+@media (min-width: 1024px) {
+    body::before {
+        content: "large";
+    }
+}
+
 /* контейнер контента */
 
 .container {

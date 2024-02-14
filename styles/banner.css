@@ -9,7 +9,7 @@
     top: 0;
     z-index: 1;
     width: 100%;
-    padding: 18px 19px;
+    padding-top: 18px;
 }
 
 .banner__title {
@@ -60,7 +60,6 @@
 @media only screen and (min-width: 640px) {
     .banner__content {
         width: 100%;
-        padding: 18px 19px;
     }
 
     .banner__title {
@@ -95,7 +94,6 @@
 @media only screen and (min-width: 1024px) {
     .banner__content {
         width: 100%;
-        padding: 19px 72px;
     }
 
     .banner__title {

@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 carouselItems.forEach(item => {
                     item.style.display = 'none';
                 });
-                
+
                 currentIndex = 0;
                 if (breakpoint !== 'small') {
                    showSlide(
@@ -172,14 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
                    showSlide(currentIndex);
                }
            } else {
-               if (breakpoint === 'small') {
+               if (breakpoint !== 'large') {
                    showSlide(currentIndex);
                }
            }
         }, false);
 
         window.addEventListener('resize', () => {
-            if (breakpoint !== 'small') {
+            if (breakpoint === 'large') {
                 if (mobileOnly) {
                     [...carouselItems ?? []].forEach(x => {
                         x.style.display = 'flex';
