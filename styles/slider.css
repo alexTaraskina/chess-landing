@@ -1,0 +1,65 @@
+.slider__btnsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28px;
+}
+
+.sliderBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: var(--main-font-color);
+    opacity: 0.2;
+    border: none;
+}
+
+.sliderBtn:focus {
+    border: none;
+    outline: none;
+}
+
+.sliderBtn:hover {
+    transform: scale(1.02);
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+
+.sliderBtn_active {
+    opacity: 1;
+}
+
+.slider__dots-wrapper {
+    display: flex;
+    margin: 0 13px;
+}
+
+.slider__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: var(--main-font-color);
+    opacity: 0.2;
+    margin: 0 3px;
+}
+
+.slider__dot_active {
+    opacity: 1;
+}
+
+.slider__number {
+    font-family: "Golos Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    padding: 0 14px;
+}
+
+.slider__btnsWrapper {
+    display: flex;
+}
+

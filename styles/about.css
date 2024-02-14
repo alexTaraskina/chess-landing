@@ -1,0 +1,249 @@
+/* блок с информацией о лекции */
+
+.about-lecture {
+    position: relative;
+    padding-top: 48px;
+}
+
+.about-lecture__title {
+    font-size: 28px;
+    line-height: 135%;
+    text-transform: uppercase;
+    color: var(--main-font-color);
+    align-self: flex-start;
+}
+
+/* порядок элементов в первом текстовом блоке */
+
+.about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(1) {
+    order: 1;
+}
+
+.about-lecture__content-row:nth-of-type(1) .about-lecture__image_wrapper {
+    order: 3;
+    margin: 24px 0;
+}
+
+.about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(2) {
+    order: 2;
+}
+
+.about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(3) {
+    order: 4;
+}
+
+.about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(4) {
+    order: 5;
+}
+
+.about-lecture__attention-text {
+    color: var(--text-attention);
+    font-weight: bold;
+}
+
+.about-lecture__content-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.about-lecture__content-row:first-of-type {
+    margin-bottom: 36px;
+    align-items: center;
+}
+
+.about-lecture__table-container {
+    padding-top: 0;
+}
+
+.about-lecture__table tr:not(:last-of-type) td:first-of-type {
+    border-bottom: none;
+}
+
+.about-lecture__table tr:not(:last-of-type) td:not(:first-of-type) {
+    border-bottom: 2px solid var(--table-border-color)
+}
+
+.about-lecture__table {
+    margin-top: 44px;
+    width: 100%;
+}
+
+.about-lecture__table tr {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-lecture__table tr:first-of-type td {
+    padding-bottom: 12px;
+}
+
+.about-lecture__table tr:not(:first-of-type) td:first-of-type {
+    padding: 16px 0 12px 0;
+}
+
+.about-lecture__row-name {
+    opacity: 0.7;
+}
+
+.about-lecture__row-name,
+.about-lecture__row-value {
+    color: var(--main-font-color);
+    font-family: 'Golos Text';
+    font-size: 20px;
+    line-height: 120%;
+}
+
+.about-lecture__row-value {
+    font-weight: 600;
+    padding-left: 0 !important;
+    padding-bottom: 16px !important;
+}
+
+.about-lecture__crossed-out-text {
+    position: relative;
+}
+
+.about-lecture__crossed-out-text::before {
+    content: ' ';
+    width: 100%;
+    height: 2px;
+    display: flex;
+    position: absolute;
+    background-color: var(--text-attention);
+    top: 50%;
+}
+
+.about-lecture__additional-text {
+    color: var(--secondary-text-color);
+    font-family: 'Golos Text';
+    font-size: 18px;
+    line-height: 120%;
+    margin-top: 32px;
+}
+
+.about-lecture__image_wrapper {
+    width: 100%;
+}
+
+.about-lecture__image_wrapper img {
+    width: 100%;
+}
+
+@media only screen and (min-width: 640px) {
+    .about-lecture {
+        padding-top: 80px;
+    }
+
+    .about-lecture__title {
+        font-size: 28px;
+        line-height: 135%;
+    }
+
+    .about-lecture__content-row {
+        flex-direction: row;
+    }
+
+    .about-lecture__content-row:nth-of-type(1) {
+        width: 65%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(3) {
+        order: 3;
+    }
+
+    .about-lecture__content-row:nth-of-type(1) .about-lecture__title:nth-of-type(4) {
+        order: 4;
+    }
+
+    .about-lecture__content-row:nth-of-type(1) .about-lecture__image_wrapper {
+        position: absolute;
+        right: 0;
+        width: 300px;
+    }
+
+    .about-lecture__table tr {
+        display: block;
+    }
+
+    .about-lecture__table tr:not(:last-of-type) td:first-of-type {
+        border-bottom: 2px solid var(--table-border-color);
+    }
+
+    .about-lecture__table-container {
+        margin-left: 16px;
+    }
+
+    .about-lecture__table-container {
+        padding-top: 29px;
+    }
+
+    .about-lecture__table {
+        margin-top: 60px;
+    }
+
+    .about-lecture__table tr:first-of-type td {
+        padding: 6px 0 16px 0;
+    }
+
+    .about-lecture__row-name {
+        width: 306px;
+    }
+
+    .about-lecture__table tr {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .about-lecture__row-value {
+        display: flex;
+        width: calc(100% - 306px);
+        padding-left: 16px !important;
+    }
+
+    .about-lecture__table tr:not(:first-of-type) td {
+        padding: 16px 0;
+    }
+
+    .about-lecture__table tr td:first-of-type {
+        border-right: 2px solid var(--table-border-color);
+    }
+
+    .about-lecture__table tr:last-of-type td {
+        padding: 16px 0 6px 0;
+    }
+
+    .about-lecture__additional-text {
+        font-size: 20px;
+        margin-top: 48px;
+    }
+
+    #about .about-lecture__image_wrapper {
+        display: none;
+    }
+
+    #about .about-lecture__table-container {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .about-lecture__title {
+        font-size: 36px;
+        line-height: 135%;
+    }
+
+    .about-lecture__content-row:nth-of-type(1) .about-lecture__image_wrapper {
+        width: 394px;
+    }
+
+    #about .about-lecture__image_wrapper {
+        display: block;
+    }
+
+    #about .about-lecture__table-container {
+        margin-left: 16px;
+    }
+}

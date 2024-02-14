@@ -1,0 +1,196 @@
+/* блок этапы */
+
+li {
+    display: block;
+    list-style: none;
+}
+
+.stages {
+    margin: 120px 0;
+    position: relative;
+}
+
+.stages__title {
+    position: relative;
+    color: var(--main-font-color);
+    font-size: 28px;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-bottom: 142px;
+}
+
+.stages__additional-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50%;
+    color: var(--secondary-text-color);
+    font-family: "Golos Text";
+    font-size: 18px;
+    line-height: 120%;
+    text-transform: none;
+    margin-top: 12px;
+}
+
+.stages__items {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 300px;
+    overflow: hidden;
+    height: 335px;
+    gap: 0;
+    background-image: url(../assets/stageItemBackgroundMobile.png);
+    background-size: 100%;
+    padding: 62px 24px 14px 20px;
+}
+
+.stages__item:nth-child(3) {
+    grid-row: span 2;
+}
+
+.stages__item:nth-child(7) {
+    grid-column: span 2;
+}
+
+.stages__item {
+    width: 100%;
+    background-image: none;
+    display: flex;
+    padding-bottom: 20px;
+    color: var(--main-font-color);
+    font-family: "Golos Text";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 120%;
+    counter-increment: item;
+}
+
+.stages__item::before {
+    display: flex;
+    content: attr(data-order);
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    margin-right: 16px;
+    background: white;
+    border-radius: 100%;
+    color: var(--main-font-color);
+    font-family: "Golos Text";
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.stages__item span {
+    width: 302px;
+    max-width: 100%;
+}
+
+.stage__images {
+    position: absolute;
+    bottom: 335px;
+    max-width: 100%;
+    max-height: 200px;
+}
+
+@media only screen and (min-width: 640px) {
+    .stages__title {
+        font-size: 54px;
+        margin-bottom: 54px;
+    }
+
+    .stages__additional-text {
+        position: absolute;
+    }
+
+    .stage__images {
+        position: absolute;
+        bottom: 30px;
+        right: 0;
+    }
+
+    .stages__title {
+        font-size: 28px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .stages {
+        margin-top: 130px;
+    }
+
+    .stages__additional-text {
+        margin-left: 20px;
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    .stages__title {
+        font-size: 54px;
+    }
+
+    .stages__items {
+        padding: 0;
+    }
+
+    .stages__additional-text {
+        display: inline-flex;
+    }
+
+    .stages__item[data-order="7"] span {
+        width: 446px;
+        max-width: 50%;
+    }
+
+    .stages__items {
+        display: grid;
+        grid-template-columns: repeat(3, calc(100% / 3 - 40px));
+        grid-template-rows: repeat(3, auto);
+        gap: 20px;
+        grid-auto-flow: row dense;
+        background-image: none;
+        height: auto;
+    }
+
+    .stages__item {
+        padding: 20px;
+    }
+
+    .stages__item[data-order="1"] {
+        background-image: url(../assets/stageItemBackground1.png);
+    }
+
+    .stages__item[data-order="2"] {
+        background-image: url(../assets/stageItemBackground2.png);
+    }
+
+    .stages__item[data-order="3"] {
+        background-image: url(../assets/stageItemBackground3.png);
+    }
+
+    .stages__item[data-order="4"] {
+        background-image: url(../assets/stageItemBackground4.png);
+    }
+
+    .stages__item[data-order="5"] {
+        background-image: url(../assets/stageItemBackground5.png);
+    }
+
+    .stages__item[data-order="6"] {
+        background-image: url(../assets/stageItemBackground6.png);
+    }
+
+    .stages__item[data-order="7"] {
+        background-image: url(../assets/stageItemBackground7.png);
+    }
+
+    .stage__images {
+        bottom: 0;
+    }
+
+    .stages .slider__btnsWrapper {
+        display: none;
+    }
+}

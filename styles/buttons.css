@@ -1,0 +1,71 @@
+/* кнопка */
+
+.btn {
+    border-radius: 66px;
+    padding: 18px 20px;
+    width: 100%;
+    font-family: "Golos Text";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 11px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn:focus {
+    border: none;
+    outline: none;
+}
+
+.btn:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.02);
+}
+
+.btn_primary {
+    background-color: var(--btn-gray);
+    color: white;
+}
+
+.btn_secondary {
+    background-color: white;
+    opacity: 0.9;
+    color: var(--btn-gray);
+}
+
+.btn_primary:hover {
+    background-color: var(--yellow);
+    color: var(--btn-gray);
+    font-weight: 500;
+}
+
+.btn_secondary:hover {
+    background-color: var(--btn-gray);
+    color: white;
+    opacity: 1;
+}
+
+@media only screen and (min-width: 640px) {
+    .btn {
+        max-width: 300px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .btn {
+        padding: 14px 49px;
+        width: calc(165px + 49px * 2);
+        line-height: 130%;
+        font-weight: bold;
+        height: fit-content;
+        flex-shrink: 0;
+    }
+
+    .btn_secondary {
+        background-color: transparent;
+        border-radius: 66px;
+        border: 2px solid var(--btn-gray);
+    }
+}
